@@ -10,7 +10,7 @@ from flask_socketio import SocketIO, emit, join_room, leave_room, \
 async_mode = None
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = 'secret!'
+app.config['SECRET_KEY'] = 'thisisasecret!'
 socketio = SocketIO(app, async_mode=async_mode)
 thread = None
 thread_lock = Lock()
@@ -20,7 +20,7 @@ def background_thread():
     """Example of how to send server generated events to clients."""
     count = 0
     while True:
-        socketio.sleep(10)
+        #socketio.sleep(10)
         count += 1
         socketio.emit('my_response',
                       {'data': 'Server generated event', 'count': count})
