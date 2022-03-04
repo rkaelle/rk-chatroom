@@ -8,7 +8,7 @@ Here is my comsci create task
 
 in order to run please install git (to download the repository)
 
-    brew install git'
+    brew install git
 
 
 if you do not have homebrew installed you will need to do it here[https://brew.sh/]
