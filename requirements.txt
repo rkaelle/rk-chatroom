@@ -1,0 +1,8 @@
+##to install do $ 'pip install -r requitements.txt'
+Flask==1.0.2
+python-socketio
+python-engineio
+Flask-Session==0.3.1
+Flask_SocketIO
+Flask-Login==0.4.1
+MarkupSafe==1.1.0
