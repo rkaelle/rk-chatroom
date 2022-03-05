@@ -48,16 +48,19 @@ install the neccesary modules and dependencies once in the chatroom folder
 
 You will need your IPV4 so get it by entering this into command line:
 mac users:
-        ipconfig getifaddr en0
+        
+    ipconfig getifaddr en0
 
 windows users:
-        ipconfig/qll
+
+    ipconfig/qll
 
 
 
 Run the commmand to activate the program
 
 **REPLACE THE IP WITH THE IPV4 YOU GOT EARLIER**
+     
      flask run -h 192.168.X.X
 
      
