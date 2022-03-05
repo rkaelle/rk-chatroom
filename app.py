@@ -1,9 +1,12 @@
 ##rk create task comsci
 from threading import Lock
-from flask import Flask, render_template, session, request, \
-    copy_current_request_context
-from flask_socketio import SocketIO, emit, join_room, leave_room, \
-    close_room, rooms, disconnect
+from flask import Flask, render_template, session
+from flask_socketio import SocketIO, emit
+from engineio.payload import Payload
+
+
+
+#Payload.max_decode_packets = 50
 
 # Set this variable to "threading", "eventlet" or "gevent" to test the
 # different async modes, or leave it set to None for the application to choose
@@ -62,3 +65,5 @@ def connect():
 
 if __name__ == '__main__':
     socketio.run(app)
+    app.debug = True
+    app.run(host="10.1.10.77")

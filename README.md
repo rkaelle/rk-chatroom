@@ -46,10 +46,21 @@ install the neccesary modules and dependencies once in the chatroom folder
   
 **RUNNING AND USE**
 
+You will need your IPV4 so get it by entering this into command line:
+mac users:
+        ipconfig getifaddr en0
+
+windows users:
+        ipconfig/qll
+
+
 
 Run the commmand to activate the program
 
-     python3 main.py
+**REPLACE THE IP WITH THE IPV4 YOU GOT EARLIER**
+     flask run -h 192.168.X.X
+
      
      
-navigate to http://127.0.0.1:5000/ in your browser to use the chat and have fun!
+
+navigate to the ip you set in your browser (in my case i set it to http://10.1.10.77:5000/) in your browser to use the chat and have fun!
