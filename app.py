@@ -1,33 +1,31 @@
 ##rk create task comsci
 from threading import Lock
 from flask import Flask, render_template, session
+import random
+from random import randrange
 from flask_socketio import SocketIO, emit
 from engineio.payload import Payload
+import string
 
 
 
-#Payload.max_decode_packets = 50
 
-# Set this variable to "threading", "eventlet" or "gevent" to test the
-# different async modes, or leave it set to None for the application to choose
-# the best option based on installed packages.
+
+
+Payload.max_decode_packets = 50
+
+
+
+
 async_mode = None
-
+possiblekeys = [''.join(random.SystemRandom().choice(string.ascii_uppercase + string.digits) for _ in range(9)),'thiscouldpossiblybeakey']
 app = Flask(__name__)
-app.config['SECRET_KEY'] = 'thisisasecret!'
+app.config['SECRET_KEY'] = possiblekeys[randrange(2)]
 socketio = SocketIO(app, async_mode=async_mode)
 thread = None
 thread_lock = Lock()
 
 
-def background_thread():
-    """Example of how to send server generated events to clients."""
-    count = 0
-    while True:
-        #socketio.sleep(10)
-        count += 1
-        socketio.emit('my_response',
-                      {'data': 'Server generated event', 'count': count})
 
 
 @app.route('/')
@@ -66,4 +64,4 @@ def connect():
 if __name__ == '__main__':
     socketio.run(app)
     app.debug = True
-    app.run(host="10.1.10.77")
+    app.run(host="0.0.0.0")
