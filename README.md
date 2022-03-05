@@ -59,6 +59,11 @@ windows users:
 
 Run the commmand to activate the program
 
+
+Set the app.py as the default flask_app
+
+        FLASK_APP=app.py
+
 **REPLACE THE IP WITH THE IPV4 YOU GOT EARLIER**
      
      flask run -h 192.168.X.X
