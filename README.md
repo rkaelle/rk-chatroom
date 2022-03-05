@@ -1,4 +1,4 @@
-# rk-chatoom
+# rk-chatroom
 
 
 **INSTALLING NECCESARY PROGRAMS**
