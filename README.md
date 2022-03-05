@@ -53,7 +53,7 @@ mac users:
 
 windows users:
 
-    ipconfig/qll
+    ipconfig/all
 
 
 
