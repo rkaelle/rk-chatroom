@@ -72,3 +72,5 @@ Set the app.py as the default flask_app
      
 
 navigate to the ip you set in your browser (in my case i set it to http://10.1.10.77:5000/) in your browser to use the chat and have fun!
+
+pass-phrase = bike
