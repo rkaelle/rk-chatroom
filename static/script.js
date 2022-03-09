@@ -1,6 +1,5 @@
 $(document).ready(function() {
     var socket = io();
-    var n = ""
     var n = prompt("Enter name");
 
     socket.on('connect', function() {

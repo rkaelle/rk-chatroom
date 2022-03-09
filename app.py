@@ -5,9 +5,11 @@ import random
 from random import randrange
 from flask_socketio import SocketIO, emit
 from engineio.payload import Payload
-import string
+import string , os
 
 #Payload.max_decode_packets = 50
+
+#ASSETS_DIR = os.path.dirname(os.path.abspath(__file__))
 
 async_mode = None
 possiblekeys = [''.join(random.SystemRandom().choice(string.ascii_uppercase + string.digits) for _ in range(9)),'thiscouldpossiblybeakey']
@@ -16,7 +18,6 @@ app.config['SECRET_KEY'] = possiblekeys[randrange(2)]
 socketio = SocketIO(app, async_mode=async_mode)
 # thread = None
 # thread_lock = Lock()
-
 
 
 
@@ -43,7 +44,6 @@ def my_broadcast_event(message):
 def my_ping():
     emit('my_pong')
 
-
 @socketio.event
 def connect():
     global thread
@@ -51,12 +51,13 @@ def connect():
         #if thread is None:
             #thread = socketio.start_background_task(background_thread)
     emit('my_response', {'data': 'Connected', 'count': 0})
-
+    #emit('my_response', {'data': 'Connected', 'count': 0})
 
 if __name__ == '__main__':
-    socketio.run(app, host="0.0.0.0", debug=False, port=5000)
+    socketio.run(app, host="0.0.0.0", debug=False, port=5000, ssl_context=('/Users/ryankaelle/Desktop/rk-chatroom/server.crt', '/Users/ryankaelle/Desktop/rk-chatroom/server.key'))
 
     ## message colon , attach images because flask can accept all types of data 
     ## styling , auto scroll , rounded edges and discord colored theme
     ## rooms and not broadcast?
     ## notifications?
+    ## image for tab (rkchat image)
