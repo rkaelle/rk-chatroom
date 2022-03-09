@@ -1,13 +1,14 @@
 $(document).ready(function() {
     var socket = io();
+    var n = ""
     var n = prompt("Enter name");
 
-    //socket.on('connect', function() {
-        //socket.emit('my_event', {data: 'Connected!'});
-    //});
+    socket.on('connect', function() {
+        socket.emit('my_event', {data: 'Connected!'});
+    });
 
     socket.on('my_response', function(msg, cb) {
-        $('#message-box').append(`<div class='message'>${msg.name}  ${msg.data}</div>`);
+        $('#message-box').append(`<div class='message'>${msg.name}   ${msg.data}</div>`);
         if (cb)
             cb();
     });

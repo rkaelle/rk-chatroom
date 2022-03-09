@@ -40,8 +40,8 @@ def my_broadcast_event(message):
          broadcast=True)
 
 @socketio.event
-def ping():
-    emit('pong')
+def my_ping():
+    emit('my_pong')
 
 
 @socketio.event
@@ -55,3 +55,8 @@ def connect():
 
 if __name__ == '__main__':
     socketio.run(app, host="0.0.0.0", debug=False, port=5000)
+
+    ## message colon , attach images because flask can accept all types of data 
+    ## styling , auto scroll , rounded edges and discord colored theme
+    ## rooms and not broadcast?
+    ## notifications?

@@ -2,16 +2,20 @@
 <html>
 <head>
     <title>rk-chat</title>
+    <style>
+    h1 {text-align: center;}
+    p {text-align: center;}
+    form {text-align: center;}
+    h2 {text-align: center;}
+    message-box {text-align: center;}
+    </style>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.0.4/socket.io.js" integrity="sha512-aMGMvNYu8Ue4G+fHa359jcPb1u+ytAF+P2SCb+PxrjCdO3n3ZTxJ30zuH39rimUggmTwmh2u7wvQsDTHESnmfQ==" crossorigin="anonymous"></script>
     <script src="{{ url_for('static', filename='script.js' )}}"></script>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css' )}}">
 </head>
 <body>
-    <h1>RK - chatroom</h1>
-    <p>
-      Average network response time is <span id="ping-pong"></span>ms
-    </p>
+
     
     <div id="message-box"></div>
     <h2>Send:</h2>
