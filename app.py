@@ -12,8 +12,8 @@ possiblekeys = [''.join(random.SystemRandom().choice(string.ascii_uppercase + st
 app = Flask(__name__)
 app.config['SECRET_KEY'] = possiblekeys[randrange(2)]
 socketio = SocketIO(app, async_mode=async_mode)
-# thread = None
-# thread_lock = Lock()
+#thread = None
+#thread_lock = Lock()
 
 
 
