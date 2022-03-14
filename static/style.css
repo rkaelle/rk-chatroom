@@ -1,8 +1,8 @@
 #message-box {
     width: 600px;
     height: 80vh;
-    border: 2px solid gainsboro;
-    background-color: rgb(55,57,61);
+    border: 0px solid gainsboro;
+    background-color: rgb(55,57,62);
     color: rgb(220,221,222);
     margin: auto;
     padding: 0;
@@ -11,7 +11,7 @@
 }
 
 body {
-    background-color: rgb(211,211,211);
+    background-color: rgb(130,130,130);
 }
 
 .message {
@@ -30,12 +30,11 @@ body {
 
 .name {
     background-color: teal;
-    color: white;
+    color: black;
     padding: 2px 16px;
     border-radius: 8px;
     margin-right: 10px;
     font-size: 15px;
-    
 }
 
 #broadcast_data {
@@ -56,5 +55,4 @@ input[type="submit"] {
 time {
     position: right;
     opacity: 0.5
-
 }

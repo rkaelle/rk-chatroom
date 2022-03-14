@@ -1,5 +1,5 @@
 var n = prompt("Enter a name");
-var colors = ["teal", "magenta", "gainsboro", "aquamarine", "indigo"];
+var colors = ['#6B7566', "#495660", "#667979", "#847F80", "#A081AD",'#99CCED'];
 var c = colors[Math.floor(colors.length * Math.random())];
 
 $(document).ready(function() {
