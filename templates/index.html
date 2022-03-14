@@ -13,15 +13,13 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.0.4/socket.io.js" integrity="sha512-aMGMvNYu8Ue4G+fHa359jcPb1u+ytAF+P2SCb+PxrjCdO3n3ZTxJ30zuH39rimUggmTwmh2u7wvQsDTHESnmfQ==" crossorigin="anonymous"></script>
     <script src="{{ url_for('static', filename='script.js' )}}"></script>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css' )}}">
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='images/favicon.ico' )}}">
 </head>
 <body>
+    <div id="ping-label">Ping: <span id="ping-pong">0</span> ms</div>
     <h1>RK - chatroom</h1>
-    <p>
-      Average network response time is <span id="ping-pong"></span>ms
-    </p>
     
     <div id="message-box"></div>
-    <h2>Send:</h2>
     <form id="broadcast" method="POST" action='#'>
         <input type="text" name="broadcast_data" id="broadcast_data" placeholder="Message" autocomplete="off">
         <input type="submit" value="Send!">

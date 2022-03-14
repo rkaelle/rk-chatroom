@@ -8,7 +8,7 @@ import string
 #Payload.max_decode_packets = 50
 
 async_mode = None
-possiblekeys = [''.join(random.SystemRandom().choice(string.ascii_uppercase + string.digits) for _ in range(9)),'thiscouldpossiblybeakey']
+possiblekeys = [''.join(random.SystemRandom().choice(string.ascii_uppercase + string.digits) for _ in range(9))]
 app = Flask(__name__)
 app.config['SECRET_KEY'] = possiblekeys[randrange(2)]
 socketio = SocketIO(app, async_mode=async_mode)
@@ -34,7 +34,7 @@ def my_event(message):
 def my_broadcast_event(message):
     session['receive_count'] = session.get('receive_count', 0) + 1
     emit('my_response',
-         {'data': message['data'], 'count': session['receive_count'], 'name': message['name']},
+         {'data': message['data'], 'count': session['receive_count'], 'name': message['name'], 'color': message['color']},
          broadcast=True)
 
 @socketio.event
@@ -48,7 +48,7 @@ def connect():
     #with thread_locxk:
         #if thread is None:
             #thread = socketio.start_background_task(background_thread)
-    emit('my_response', {'data': 'Connected', 'count': 0})
+    #emit('my_response', {'data': 'Connected', 'count': 0})
 
 
 if __name__ == '__main__':
@@ -58,3 +58,4 @@ if __name__ == '__main__':
     ## rooms and not broadcast?
     ## notifications?
     ## image for tab (rkchat image)
+    #disable html text

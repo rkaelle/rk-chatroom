@@ -1,13 +1,13 @@
+var n = prompt("Enter a name");
+var colors = ["teal", "magenta", "gainsboro", "aquamarine", "indigo"];
+var c = colors[Math.floor(colors.length * Math.random())];
+
 $(document).ready(function() {
     var socket = io();
-    var n = prompt("Enter name");
-
-    socket.on('connect', function() {
-        socket.emit('my_event', {data: 'Connected!'});
-    });
 
     socket.on('my_response', function(msg, cb) {
-        $('#message-box').append(`<div class='message'>${msg.name}   ${msg.data}</div>`);
+        $('#message-box').append(`<div class='message'><span class='name' style='background-color: ${msg.color}'>${msg.name}</span>   ${msg.data}</div>`);
+        $("#message-box").scrollTop($("#message-box")[0].scrollHeight);
         if (cb)
             cb();
     });
@@ -33,7 +33,7 @@ $(document).ready(function() {
 
     $('form#broadcast').submit(function(event) {
         event.preventDefault();
-        socket.emit('my_broadcast_event', {data: $('#broadcast_data').val(), name: n});
+        socket.emit('my_broadcast_event', {data: $('#broadcast_data').val(), name: n, color: c, time: Date.now()});
         $("#broadcast_data").val("");
         return false;
     });

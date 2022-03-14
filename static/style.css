@@ -1,11 +1,60 @@
 #message-box {
     width: 600px;
     height: 80vh;
-    border: 4px solid darkslategray;
+    border: 2px solid gainsboro;
     background-color: rgb(55,57,61);
     color: rgb(220,221,222);
-    
+    margin: auto;
+    padding: 0;
+    overflow-y: scroll;
+    border-radius: 14px;
+}
+
+body {
+    background-color: rgb(211,211,211);
+}
+
+.message {
+    font-size: 16px;
+    padding: 8px 12px;
+    color: rgb(220,221,222);
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+.message:nth-child(even) {
+    background-color: rgb(75,77,81);
+}
+
+.name {
+    background-color: teal;
+    color: white;
+    padding: 2px 16px;
+    border-radius: 8px;
+    margin-right: 10px;
+    font-size: 15px;
     
 }
 
+#broadcast_data {
+    height: 24px;
+    width: calc(600px - 15%);
+}
 
+input[type="submit"] {
+    width: 80px;
+    height: 28px;
+}
+
+#ping-label {
+    right: 12px;
+    position: absolute;
+}
+
+time {
+    position: right;
+    opacity: 0.5
+
+}
