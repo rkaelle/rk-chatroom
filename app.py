@@ -10,7 +10,7 @@ import string
 async_mode = None
 possiblekeys = [''.join(random.SystemRandom().choice(string.ascii_uppercase + string.digits) for _ in range(9))]
 app = Flask(__name__)
-app.config['SECRET_KEY'] = possiblekeys[randrange(2)]
+app.config['SECRET_KEY'] = possiblekeys[0]
 socketio = SocketIO(app, async_mode=async_mode)
 #thread = None
 #thread_lock = Lock()
@@ -22,12 +22,12 @@ socketio = SocketIO(app, async_mode=async_mode)
 def index():
     return render_template('index.html', async_mode=socketio.async_mode)
 
+#@socketio.event
+#def my_event(message):
+    #session['receive_count'] = session.get('receive_count', 0) + 1
+    #emit('my_response',
+         #{'data': message['data'], 'count': session['receive_count']})
 
-@socketio.event
-def my_event(message):
-    session['receive_count'] = session.get('receive_count', 0) + 1
-    emit('my_response',
-         {'data': message['data'], 'count': session['receive_count']})
 
 
 @socketio.event
@@ -36,6 +36,7 @@ def my_broadcast_event(message):
     emit('my_response',
          {'data': message['data'], 'count': session['receive_count'], 'name': message['name'], 'color': message['color']},
          broadcast=True)
+
 
 @socketio.event
 def my_ping():
