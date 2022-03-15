@@ -3,7 +3,7 @@
     height: 80vh;
     border: 0px solid gainsboro;
     background-color: rgb(55,57,62);
-    color: rgb(220,221,222);
+    color: purple;
     margin: auto;
     padding: 0;
     overflow-y: scroll;
@@ -45,6 +45,8 @@ body {
 input[type="submit"] {
     width: 80px;
     height: 28px;
+    color: blueviolet;
+
 }
 
 #ping-label {

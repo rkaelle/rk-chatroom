@@ -30,10 +30,9 @@ $(document).ready(function() {
         $('#ping-pong').text(Math.round(10 * sum / ping_pong_times.length) / 10);
     });
 
-
     $('form#broadcast').submit(function(event) {
         event.preventDefault();
-        socket.emit('my_broadcast_event', {data: $('#broadcast_data').val(), name: n, color: c, time: Date.now()});
+        socket.emit('send_message_event', {data: $('#broadcast_data').val(), name: n, color: c, time: Date.now()});
         $("#broadcast_data").val("");
         return false;
     });
