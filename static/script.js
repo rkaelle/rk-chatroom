@@ -1,12 +1,13 @@
 var n = prompt("Enter a name");
 var colors = ['#6B7566', "#495660", "#667979", "#847F80", "#A081AD",'#99CCED'];
 var c = colors[Math.floor(colors.length * Math.random())];
+//const timestamp = new Date.now()
 
 $(document).ready(function() {
     var socket = io();
 
     socket.on('my_response', function(msg, cb) {
-        $('#message-box').append(`<div class='message'><span class='name' style='background-color: ${msg.color}'>${msg.name}</span>   ${msg.data}</div>`);
+        $('#message-box').append(`<div class='message'><span class='name' style='background-color: ${msg.color}'>${msg.name}</span>   ${msg.data}  <span class='time' ${msg.time}</span></div>`);
         $("#message-box").scrollTop($("#message-box")[0].scrollHeight);
         if (cb)
             cb();
@@ -32,7 +33,7 @@ $(document).ready(function() {
 
     $('form#broadcast').submit(function(event) {
         event.preventDefault();
-        socket.emit('send_message_event', {data: $('#broadcast_data').val(), name: n, color: c, time: Date.now()});
+        socket.emit('send_message_event', {data: $('#broadcast_data').val(), name: n, color: c, time: new Date().toLocaleTimeString().replace("/.*(\d{2}:\d{2}:\d{2}).*/", "$1")});
         $("#broadcast_data").val("");
         return false;
     });
