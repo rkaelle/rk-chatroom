@@ -1,5 +1,5 @@
 var n = prompt("Enter a name");
-var colors = ['#6B7566', "#495660", "#667979", "#847F80", "#A081AD",'#99CCED'];
+var colors = ['#6B7566', "#495660", "#667979", "#847F80", "#A081AD",'#99CCED','#FF5733', '#9A33FF','#D4FF33','#33FF92','#C233FF','#FF3336','#FF338F','#3398FF','#FF9933','#339EFF','#BCFF33','#FFFFFF'];
 var c = colors[Math.floor(colors.length * Math.random())];
 //const timestamp = new Date.now()
 
