@@ -1,6 +1,6 @@
 from flask import Flask, render_template, session
 import random
-from random import randrange
+#from random import randrange
 from flask_socketio import SocketIO, emit
 from engineio.payload import Payload
 import string
@@ -34,10 +34,6 @@ def my_ping():
 @socketio.event
 def connect():
     global thread
-    #with thread_locxk:
-        #if thread is None:
-            #thread = socketio.start_background_task(background_thread)
-    #emit('my_response', {'data': 'Connected', 'count': 0})
 
 
 if __name__ == '__main__':
@@ -47,4 +43,4 @@ if __name__ == '__main__':
     ## rooms and not broadcast?
     ## notifications?
     ## image for tab (rkchat image)
-    #disable html text
+    ## disable html text
