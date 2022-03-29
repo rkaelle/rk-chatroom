@@ -6,3 +6,4 @@ Flask_SocketIO
 python-engineio
 python-socketio
 pyOpenSSL
+gunicorn
