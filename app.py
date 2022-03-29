@@ -5,7 +5,7 @@
 from flask import Flask, render_template, session
 import random
 from flask_socketio import SocketIO, emit
-from engineio.payload import Payload
+#from engineio.payload import Payload
 import string
 
 #Payload.max_decode_packets = 50
@@ -49,6 +49,8 @@ def connect():
 #this sets the parameters for the socketio app and essentially states the app is the flask app, the app will be visible to all on the network, debuf mode is not on, and sets port 5000 
 if __name__ == '__main__':
     socketio.run(app, host="0.0.0.0", debug=False, port=5000)
+
+    ##below here is the list of features i would like to add in the future
     ## message colon , attach images because flask can accept all types of data 
     ## styling , auto scroll , rounded edges and discord colored theme
     ## rooms and not broadcast?
