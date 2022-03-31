@@ -17,7 +17,7 @@ possiblekeys = [''.join(random.SystemRandom().choice(string.ascii_uppercase + st
 #this initialized the flask app by setting the app equal to the flask with the parameter of name
 app = Flask(__name__)
 #this accesses our previously written 9 character alphanumeric string written earlier and sets it equal to the app's key and keeps the client side secure.  this key encrypts the cookies and sends them encrypted to the browser.
-app.config['SECRET_KEY'] = possiblekeys[0]
+app.config['SECRET_KEY'] = random.choice(possiblekeys)
 #this sets the app for the socketio webserver and 
 socketio = SocketIO(app, async_mode=async_mode)
 #thread = None
