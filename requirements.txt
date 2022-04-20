@@ -1,4 +1,4 @@
-##to install do $ 'pip install -r requitements.txt'
+##to install do $ 'pip install -r requirements.txt'
 Flask
 Flask-Login
 Flask-Session
