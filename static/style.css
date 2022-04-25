@@ -12,6 +12,9 @@
 
 body {
     background-color: rgb(130,130,130);
+    background-image: linear-gradient(to right, #141e30, #243b55);
+    color: rgb(220,221,222);
+    
 }
 
 .message {

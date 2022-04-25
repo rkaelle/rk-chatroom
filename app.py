@@ -7,6 +7,7 @@ import random
 from flask_socketio import SocketIO, emit
 #from engineio.payload import Payload
 import string
+from flask_ngrok import run_with_ngrok
 
 #Payload.max_decode_packets = 50
 
@@ -16,6 +17,7 @@ async_mode = None
 possiblekeys = [''.join(random.SystemRandom().choice(string.ascii_uppercase + string.digits) for _ in range(9))]
 #this initialized the flask app by setting the app equal to the flask with the parameter of name
 app = Flask(__name__)
+run_with_ngrok(app)
 #this accesses our previously written 9 character alphanumeric string written earlier and sets it equal to the app's key and keeps the client side secure.  this key encrypts the cookies and sends them encrypted to the browser.
 app.config['SECRET_KEY'] = random.choice(possiblekeys)
 #this sets the app for the socketio webserver and 
@@ -49,6 +51,7 @@ def connect():
 #this sets the parameters for the socketio app and essentially states the app is the flask app, the app will be visible to all on the network, debuf mode is not on, and sets port 5000 
 if __name__ == '__main__':
     socketio.run(app, host="0.0.0.0", debug=False, port=5000)
+    app.run()
 
     ##below here is the list of features i would like to add in the future
     
@@ -58,3 +61,4 @@ if __name__ == '__main__':
     ## notifications?
     ## image for tab (rkchat image)
     ## disable html text
+    ## which users are conected (little box), timestamps
