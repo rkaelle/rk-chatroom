@@ -2,12 +2,13 @@
 ## The following code is the backend python for the web server using the flask library
 
 #importing modules and dependencies
-from flask import Flask, render_template, session
+from flask import Flask, render_template, session, escape
 import random
 from flask_socketio import SocketIO, emit
 #from engineio.payload import Payload
 import string
 from flask_ngrok import run_with_ngrok
+import time
 
 #Payload.max_decode_packets = 50
 
@@ -34,8 +35,9 @@ def index():
 @socketio.event
 def send_message_event(message):
     session['receive_count'] = session.get('receive_count', 0) + 1
+    message_time = time.strftime("%-I:%M:%S %p")
     emit('my_response',
-         {'data': message['data'], 'count': session['receive_count'], 'name': message['name'], 'color': message['color']},
+         {'data': escape(message['data']), 'count': session['receive_count'], 'name': escape(message['name']), 'color': escape(message['color']), 'time': message_time},
          broadcast=True)
 
 #this is the code for the ping display in the top right corner.  it defines the event my_ping and will be accessed in the javascript file

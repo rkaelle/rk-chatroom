@@ -7,7 +7,17 @@ $(document).ready(function() {
     var socket = io();
 
     socket.on('my_response', function(msg, cb) {
-        $('#message-box').append(`<div class='message'><span class='name' style='background-color: ${msg.color}'>${msg.name}</span>   ${msg.data}  <span class='time' ${msg.time}</span></div>`);
+        console.log(msg);
+        $('#message-box').append(`<div class='message flex-container'>
+            <div class="flex-item">
+                <span class='name' style='background-color: ${msg.color}'>${msg.name}</span>
+            </div>
+            <div class="flex-item">
+               ${msg.data}  
+            </div>
+            <div class="flex-item">
+                <span class="time"> ${msg.time}</span>
+            </div>`);
         $("#message-box").scrollTop($("#message-box")[0].scrollHeight);
         if (cb)
             cb();
@@ -33,7 +43,7 @@ $(document).ready(function() {
 
     $('form#broadcast').submit(function(event) {
         event.preventDefault();
-        socket.emit('send_message_event', {data: $('#broadcast_data').val(), name: n, color: c, time: new Date().toLocaleTimeString().replace("/.*(\d{2}:\d{2}:\d{2}).*/", "$1")});
+        socket.emit('send_message_event', {data: $('#broadcast_data').val(), name: n, color: c });
         $("#broadcast_data").val("");
         return false;
     });
