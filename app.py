@@ -1,5 +1,4 @@
-## Ryan Kaelle March create task
-## The following code is the backend python for the web server using the flask library
+## The following code is the backend python for the web server using the flask library & socketio
 
 #importing modules and dependencies
 from flask import Flask, render_template, session, escape
@@ -54,13 +53,3 @@ def connect():
 if __name__ == '__main__':
     socketio.run(app, host="0.0.0.0", debug=False, port=5000)
     app.run()
-
-    ##below here is the list of features i would like to add in the future
-    
-    ## message colon , attach images because flask can accept all types of data 
-    ## styling , auto scroll , rounded edges and discord colored theme
-    ## rooms and not broadcast?
-    ## notifications?
-    ## image for tab (rkchat image)
-    ## disable html text
-    ## which users are conected (little box), timestamps
