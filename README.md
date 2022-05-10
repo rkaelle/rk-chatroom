@@ -66,7 +66,7 @@ Set the app.py as the default flask_app
 
 **REPLACE THE IP WITH THE IPV4 YOU GOT EARLIER**
      
-     flask run -h X.X.X.X
+     flask run --host=0.0.0.0
 
      
      

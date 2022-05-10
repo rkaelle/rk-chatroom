@@ -36,7 +36,7 @@ def send_message_event(message):
     session['receive_count'] = session.get('receive_count', 0) + 1
     message_time = time.strftime("%-I:%M:%S %p")
     emit('my_response',
-         {'data': escape(message['data']), 'count': session['receive_count'], 'name': escape(message['name']), 'color': escape(message['color']), 'time': message_time},
+         {'data': message['data'], 'count': session['receive_count'], 'name': escape(message['name']), 'color': escape(message['color']), 'time': message_time},
          broadcast=True)
 
 #this is the code for the ping display in the top right corner.  it defines the event my_ping and will be accessed in the javascript file
