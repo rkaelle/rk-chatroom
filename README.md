@@ -1,5 +1,5 @@
 # rk-chatroom
-![image info](chatroom-screenshot.png)
+<img width="1306" alt="Site Screenshot" src="/chatroom-screenshot.png">
 
 
 **INSTALLING NECCESARY PROGRAMS**
