@@ -1,5 +1,7 @@
 # rk-chatroom
 
+![image info](.chatroom-screenshot.png)
+
 
 **INSTALLING NECCESARY PROGRAMS**
 
