@@ -5,8 +5,6 @@
 **INSTALLING NECCESARY PROGRAMS**
 
 
-Here is my comsci create task
-
 in order to run please install git (to download the repository)
 
     brew install git
